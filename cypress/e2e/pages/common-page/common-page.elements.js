@@ -16,6 +16,9 @@ export class CommonPageElements{
             }, 
             get cart(){
                 return cy.get('a#cartur');
+            }, 
+            get logout(){
+                return cy.contains('a', 'Log out')
             }
         };
     }
