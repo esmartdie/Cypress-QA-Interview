@@ -6,7 +6,7 @@ export class CartHelper {
   }
 
   static verifyProductCartAdded(productName){
-    CartElements.elements.productCartRow(productName).should('exist');
+    CartElements.elements.productCartRow.should("be.visible").and("have.text", productName);
   }
 
   static clickOnDeleteButton(){

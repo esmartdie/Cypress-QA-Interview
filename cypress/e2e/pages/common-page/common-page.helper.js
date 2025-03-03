@@ -15,8 +15,9 @@ export class CommonPageHelper{
     }
 
     static verifySignedUser(username){
-        CommonPageElements.topMenu.nameOfUser.should("contain", 'Welcome ${username}');
+        CommonPageElements.topMenu.nameOfUser.should("contain", `Welcome ${username}`);
     }
+  
 
     static clickOnHomePage(){
         CommonPageConstants.topMenu.clickOnHomePage.click();
@@ -31,6 +32,6 @@ export class CommonPageHelper{
     }
     
     static verifyLoginButtonExits(){
-        CommonPageElements.elements.login.should('exist');        
+        CommonPageElements.topMenu.login.should('be.visible');        
     }
 }

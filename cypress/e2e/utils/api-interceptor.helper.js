@@ -10,18 +10,16 @@ export class ApiInterceptorHelper {
 
         cy.intercept(method, url).as(aliasName);
 
-        return `@${aliasName}`;
+        return `${aliasName}`;
     }
 
-    static confirmationMessage(alertAlias, apiAlias, expectedMessage){
+    static confirmationMessage(alertAlias, apiAlias, expectedMessage) {
         cy.window().then((win) => {
-            cy.stub(win, "alert").as(alertAlias);
+            const alertStub = cy.stub(win, "alert").as(alertAlias);
         });
-
-        cy.wait(apiAlias);
-
-        cy.get(`@${alertAlias}`).should("have.been.calledWith", expectedMessage).then(() =>{
-            alertStub();
-        });
-    }
+    
+        cy.wait(`@${apiAlias}`);
+    
+        cy.get(`@${alertAlias}`).should("have.been.calledWith", expectedMessage);
+    }    
 }

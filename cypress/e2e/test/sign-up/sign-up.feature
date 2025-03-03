@@ -5,7 +5,7 @@ Feature: Sign Up, Log In and Log Out
     When They go to the sign-up page
     When They enter valid registration details
     When They submit the form
-    Then the account should be created successfully
+    Then The account should be created successfully
 
   Scenario: Successful Log In and Out
     Given They visit the home page

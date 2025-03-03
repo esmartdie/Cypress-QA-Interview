@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "cypress": "14.1.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": [
+      "cypress/e2e/test/[filepart]/step-definitions/**/*.{js,ts}",
+      "cypress/e2e/test/common/common-steps.js"
+    ]
+  },
+  "dependencies": {
+    "path-browserify": "^1.0.1"
+  }
+}
